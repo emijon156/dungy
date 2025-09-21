@@ -74,7 +74,6 @@ expl_coord.show(5)
 nan_test = np.isnan(expl_coord.column('pl_bmasse'))
 expl_analysis = expl_coord.with_column('nan', nan_test).where('nan', False).drop('nan')
 print(expl_coord.num_rows, expl_analysis.num_rows)
-expl_analysis
 
 median_density = np.median(expl_analysis.column('dark_matter_density'))
 region = ['Galactic Core' if dm >= median_density else 'Galactic Rim'
