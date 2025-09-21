@@ -7,10 +7,10 @@ Original file is located at
     https://colab.research.google.com/drive/1aT22o3C1hEuO7wkpLXZabRf5ZmNt7MTz
 """
 
-!pip install numpy
-!pip install astropy
-!pip install datascience
-!pip install matlab
+pip install numpy
+pip install astropy
+pip install datascience
+pip install matlab
 
 from datascience import *
 
