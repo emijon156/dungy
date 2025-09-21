@@ -21,6 +21,8 @@ dist = expl_tbl.column('sy_dist')
 from astropy.coordinates import SkyCoord
 import astropy.units as u
 import numpy as np
+import streamlit as st
+
 
 coords = SkyCoord(
     ra=np.array(ra) * u.deg,
@@ -79,7 +81,6 @@ region = ['Galactic Core' if dm >= median_density else 'Galactic Rim'
           for dm in expl_analysis.column('dark_matter_density')]
 
 expl_analysis = expl_analysis.with_column('region', region)
-expl_analysis.show(5)
 
 nan_test = np.isnan(expl_raw.column('pl_bmasse'))
 expl_all = expl_raw.with_column('nan', nan_test).where('nan', False).drop('nan')
