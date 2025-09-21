@@ -60,7 +60,6 @@ r_galactic = np.sqrt(
 )
 
 expl_coord = expl_coord.with_column('r_galactic', r_galactic)
-expl_coord.show(5)
 
 rho_0 = 0.0106
 R_s = 12500
@@ -69,7 +68,6 @@ r_over_Rs = r_galactic / R_s
 dark_matter_density = rho_0 / (r_over_Rs * (1 + r_over_Rs)**2)
 
 expl_coord = expl_coord.with_column('dark_matter_density', dark_matter_density)
-expl_coord.show(5)
 
 nan_test = np.isnan(expl_coord.column('pl_bmasse'))
 expl_analysis = expl_coord.with_column('nan', nan_test).where('nan', False).drop('nan')
@@ -83,7 +81,6 @@ expl_analysis = expl_analysis.with_column('region', region)
 
 nan_test = np.isnan(expl_raw.column('pl_bmasse'))
 expl_all = expl_raw.with_column('nan', nan_test).where('nan', False).drop('nan')
-expl_all
 
 import pandas as pd
 import numpy as np
